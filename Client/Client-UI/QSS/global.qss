@@ -1,0 +1,108 @@
+QScrollArea{
+    border: 0px solid;
+    border-right-width: 1px;
+    border-right-color: #dcdbdc;
+    background-color: #f5f5f7;
+}
+
+QScrollBar:vertical {
+    border: none;
+    background: #f5f5f7;
+    width: 10px;
+    margin: 0px 0 0px 0;
+}
+QScrollBar::handle:vertical {
+    background: Gainsboro;
+    min-height: 20px;
+    border-radius: 5px;
+    border: none;
+}
+QScrollBar::add-line:vertical {
+    border: 0px solid grey;
+    background: #32CC99;
+    height: 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::sub-line:vertical {
+    border: 0px solid grey;
+    background: #32CC99;
+    height: 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+    width: 0px;
+    height: 0px;
+}
+
+QScrollBar:horizontal {
+    border: none;
+    background: #f5f5f7;
+    height: 10px;
+    margin: 0px 0 0px 0;
+}
+QScrollBar::handle:horizontal {
+    background: Gainsboro;
+    min-width: 20px;
+    border-radius: 5px;
+    border: none;
+}
+QScrollBar::add-line:horizontal {
+    border: 0px solid grey;
+    background: #32CC99;
+    width: 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::sub-line:horizontal {
+    border: 0px solid grey;
+    background: #32CC99;
+    width: 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    background: none;
+    width: 0px;
+    height: 0px;
+}
+
+QLineEdit {
+    border: none;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgb(100, 100, 100);
+    color: #003738;
+    background-color:rgba(0,0,0,0);
+}
+
+QLineEdit:hover {
+   border-bottom: 1px solid rgb(2, 164, 235);
+}
+
+
+QLineEdit:editable{
+    border: none;
+    padding-bottom: 2px;
+    font-size: 16px;
+}
+
+QLineEdit:disabled{
+    border: 0px solid white;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #eeeeee;
+    color: #dddddd;
+}
+
+QLineEdit:focus{
+    border: 0px solid white;
+    padding-bottom: 2px;
+    border-bottom: 2px solid rgb(2, 174, 245);
+    color: A4FFF1;
+}
+QLineEdit:pressed {
+    border: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid rgb(2, 174, 245);
+}

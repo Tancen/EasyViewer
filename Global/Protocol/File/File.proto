@@ -1,0 +1,218 @@
+syntax = "proto3";
+
+package Global.Protocol.File;
+
+message EntryInfo
+{
+	string directory = 1;
+	string name = 2;
+	uint64 size = 3;
+	bool is_directory = 4;
+	int64 last_modifying_time = 5;
+}
+
+message RequestVisitFiles
+{
+	int64 user_id = 1;
+	string auth_string = 2;
+}
+
+message ResponseVisitFiles
+{
+	int32 err_code = 1;
+	string err_string = 2;
+	repeated string default_dirs = 3;
+	repeated EntryInfo entries = 4;
+}
+
+message RequestVisitFiles2
+{
+	int64 user_id = 1;
+	uint64 async_task_id = 2;
+	uint32 async_task_certificate = 3;
+	string auth_string = 4;
+}
+
+message ResponseVisitFiles2
+{
+	uint64 async_task_id = 1;
+	uint32 async_task_certificate = 2;
+	int32 err_code = 3;
+	string err_string = 4;
+	repeated string default_dirs = 5;
+	repeated EntryInfo entries = 6;
+}
+
+message RequestMakeDirectory
+{
+	int64 seq = 1;
+	int64 user_id = 2;
+	string dir = 3;
+	string name = 4;
+}
+
+message ResponseMakeDirectory
+{
+	int64 seq = 1;
+	int64 user_id = 2;
+	int32 err_code = 3;
+	string err_string = 4;
+	string dir = 5;
+	string name = 6;
+	string last_modifying_time = 7;
+}
+
+message RequestDeleteEntry
+{
+	int64 seq = 1;
+	int64 user_id = 2;
+	string dir = 3;
+	string name = 4;
+}
+
+message ResponseDeleteEntry
+{
+	int64 seq = 1;
+	int64 user_id = 2;
+	int32 err_code = 3;
+	string err_string = 4;
+	string dir = 5;
+	string name = 6;
+}
+
+message RequestRenameEntry
+{
+	int64 seq = 1;
+	int64 user_id = 2;
+	string dir = 3;
+	string old_name = 4;
+	string new_name = 5;
+}
+
+message ResponseRenameEntry
+{
+	int64 seq = 1;
+	int64 user_id = 2;
+	int32 err_code = 3;
+	string err_string = 4;
+	string dir = 5;
+	string old_name = 6;
+	string new_name = 7;
+	string last_modifying_time = 8;
+}
+
+message RequestGoUp
+{
+	int64 seq = 1;
+	int64 user_id = 2;
+	string dir = 3;
+}
+
+message ResponseGoUp
+{
+	int64 seq = 1;
+	int64 user_id = 2;
+	int32 err_code = 3;
+	string err_string = 4;
+	string dir = 5;
+	repeated EntryInfo entries = 6;
+}
+
+message RequestGoHome
+{
+	int64 seq = 1;
+	int64 user_id = 2;
+}
+
+message ResponseGoHome
+{
+	int64 seq = 1;
+	int64 user_id = 2;
+	int32 err_code = 3;
+	string err_string = 4;
+	string dir = 5;
+	repeated EntryInfo entries = 6;
+}
+
+message RequestListEntries
+{
+	int64 seq = 1;
+	int64 user_id = 2;
+	string dir = 3;
+}
+
+message ResponseListEntries
+{
+	int64 seq = 1;
+	int64 user_id = 2;
+	int32 err_code = 3;
+	string err_string = 4;
+	string dir = 5;
+	repeated EntryInfo entries = 6;
+}
+
+message RequestOpenFile
+{
+	int64 seq = 1;
+	int64 user_id = 2;
+	string task_id = 3;
+	int32 mode = 4;
+	string directory = 5;
+	string file_name = 6;
+	uint64 file_size = 7;
+	uint64 seek = 8;
+	bool force = 9;
+}
+
+message ResponseOpenFile
+{
+	int64 seq = 1;
+	int64 user_id = 2;
+	int32 err_code = 3;
+	string err_string = 4;
+	string task_id = 5;
+}
+
+message RequestWriteFileBlock
+{
+	int64 user_id = 1;
+	string task_id = 2;
+	uint64 seek = 3;
+	uint32 raw_data_len = 4;
+	bytes compressed_data = 5;
+}
+
+message ResponseWriteFileBlock
+{
+	int32 err_code = 1;
+	string err_string = 2;
+	string task_id = 3;
+	int64 user_id = 4;
+	uint64 after_seek = 5;
+}
+
+message RequestReadFileBlock
+{
+	int64 user_id = 1;
+	string task_id = 2;
+	uint64 seek = 3;
+	uint32 len = 4;
+}
+
+message ResponseReadFileBlock
+{
+	int32 err_code = 1;
+	string err_string = 2;
+	string task_id = 3;
+	int64 user_id = 4;
+	uint64 seek = 5;
+	uint32 raw_data_len = 6;
+	bytes compressed_data = 7;
+}
+
+message CloseFile
+{
+	int64 user_id = 1;
+	string task_id = 2;
+}
+

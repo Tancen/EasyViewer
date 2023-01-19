@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package Global.Protocol.Screen;
+
+message RequestSubscribeScreen
+{
+	int64 user_id = 1;
+	string auth_string = 2;
+}
+
+message ResponseSubscribeScreen
+{
+	int32 err_code = 1;
+	string err_string = 2;
+	string secret_key = 3;
+}
+
+message RequestSubscribeScreen2
+{
+	int64 user_id = 1;
+	uint64 async_task_id = 2;
+	uint32 async_task_certificate = 3;
+	string auth_string = 4;
+}
+
+message ResponseSubscribeScreen2
+{
+	uint64 async_task_id = 1;
+	uint32 async_task_certificate = 2;
+	int32 err_code = 3;
+	string err_string = 4;
+	string secret_key = 5;
+}
+
+message PublishScreenFrame
+{
+	int64 seq = 1;
+	uint32 w = 2;
+	uint32 h = 3;
+	bytes data = 4;
+}

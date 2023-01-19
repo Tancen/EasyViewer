@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package Global.Protocol.Common;
+
+message RequestEcho
+{
+	int32 seq = 1;
+	int64 time = 2;
+}
+
+message ResponseEcho
+{
+	int32 seq = 1;
+	int64 time = 2;
+}

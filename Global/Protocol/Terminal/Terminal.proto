@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package Global.Protocol.Terminal;
+
+message RequestCreateTerminal
+{
+	int64 user_id = 1;
+	string auth_string = 2;
+	int32 width = 3;
+	int32 height = 4;
+}
+
+message ResponseCreateTerminal
+{
+	int32 err_code = 1;
+	string err_string = 2;
+	int64 user_id = 3;
+	string terminal_id = 4;
+	string secret_key = 5;
+}
+
+message RequestCreateTerminal2
+{
+	int64 user_id = 1;
+	uint64 async_task_id = 2;
+	uint32 async_task_certificate = 3;
+	string auth_string = 4;
+	int32 width = 5;
+	int32 height = 6;
+}
+
+message ResponseCreateTerminal2
+{
+	uint64 async_task_id = 1;
+	uint32 async_task_certificate = 2;
+	int32 err_code = 3;
+	string err_string = 4;
+	string terminal_id = 5;
+	string secret_key = 6;
+}
+
+message ResizeTerminal
+{
+	int64 user_id = 1;
+	string terminal_id = 2;
+	int32 width = 3;
+	int32 height = 4;
+}
+
+message WriteCommand
+{
+	int64 user_id = 1;
+	string terminal_id = 2;
+	bytes command = 3;
+}
+
+message PublishTerminalOutput
+{
+	int64 user_id = 1;
+	string terminal_id = 2;
+	bytes data = 3;
+}
+
+message CloseTerminal
+{
+	string terminal_id = 1;
+}
+
+message KickoutVisitor
+{
+	string terminal_id = 1;
+}

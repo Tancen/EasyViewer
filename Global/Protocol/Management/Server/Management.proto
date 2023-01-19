@@ -1,0 +1,188 @@
+syntax = "proto3";
+
+package Global.Protocol.Server.Management;
+
+message Account
+{
+	int64 user_id = 1;
+	string account = 2;
+	string password = 3;
+	bool disabled = 4;
+}
+
+
+message RequestListAccount
+{
+	int64 seq = 1;
+	string user_name_filter = 2;
+}
+
+message ResponseListAccount
+{
+	int64 seq = 1;
+	int32 err_code = 2;
+	string err_string = 3;
+	repeated Account accounts = 4;
+}
+
+
+message RequestAddAccount
+{
+	int64 seq = 1;
+	string account = 2;
+	string password = 3;
+}
+
+message ResponseAddAccount
+{
+	int64 seq = 1;
+	int32 err_code = 2;
+	string err_string = 3;
+	int64 user_id = 4;
+}
+
+message RequestEnableAccount
+{
+	int64 seq = 1;
+	string account = 2;
+}
+
+message ResponseEnableAccount
+{
+	int64 seq = 1;
+	int32 err_code = 2;
+	string err_string = 3;
+}
+
+message RequestDisableAccount
+{
+	int64 seq = 1;
+	string account = 2;
+}
+
+message ResponseDisableAccount
+{
+	int64 seq = 1;
+	int32 err_code = 2;
+	string err_string = 3;
+}
+
+message RequestDeleteAccount
+{
+	int64 seq = 1;
+	string account = 2;
+}
+
+message ResponseDeleteAccount
+{
+	int64 seq = 1;
+	int32 err_code = 2;
+	string err_string = 3;
+}
+
+message RequestChangeAccountPassword
+{
+	int64 seq = 1;
+	string account = 2;
+	string password = 3;
+}
+
+message ResponseChangeAccountPassword
+{
+	int64 seq = 1;
+	int32 err_code = 2;
+	string err_string = 3;
+}
+
+message RequestListBlockedIPAddresses
+{
+	int64 seq = 1;
+}
+
+message BlockedIPAddress
+{
+	string ip_address = 1;
+	int64 until = 2;
+}
+
+message ResponseListBlockedIPAddresses
+{
+	int64 seq = 1;
+	int32 err_code = 2;
+	string err_string = 3;
+	repeated BlockedIPAddress ip_addresses = 4;
+}
+
+message RequestRemoveBlockedIPAddress
+{
+	int64 seq = 1;
+	string ip_address = 2;
+}
+
+message ResponseRemoveBlockedIPAddress
+{
+	int64 seq = 1;
+	int32 err_code = 2;
+	string err_string = 3;
+}
+
+message RequestAddBlockedIPAddress
+{
+	int64 seq = 1;
+	string ip_address = 2;
+	int32 duration = 3;
+}
+
+message ResponseAddBlockedIPAddress
+{
+	int64 seq = 1;
+	int32 err_code = 2;
+	string err_string = 3;
+}
+
+message RequestListBlockedAccounts
+{
+	int64 seq = 1;
+}
+
+message BlockedAccount
+{
+	int64 user_id = 1;
+	string account = 2;
+	int64 until = 3;
+}
+
+message ResponseListBlockedAccounts
+{
+	int64 seq = 1;
+	int32 err_code = 2;
+	string err_string = 3;
+	repeated BlockedAccount accounts = 4;
+}
+
+message RequestRemoveBlockedAccount
+{
+	int64 seq = 1;
+	int64 user_id = 2;
+}
+
+message ResponseRemoveBlockedAccount
+{
+	int64 seq = 1;
+	int32 err_code = 2;
+	string err_string = 3;
+}
+
+message RequestAddBlockedAccount
+{
+	int64 seq = 1;
+	int64 user_id = 2;
+	int32 duration = 3;
+}
+
+message ResponseAddBlockedAccount
+{
+	int64 seq = 1;
+	int32 err_code = 2;
+	string err_string = 3;
+}

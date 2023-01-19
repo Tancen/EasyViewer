@@ -1,0 +1,39 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resource/clean.png</file>
+        <file>Resource/close.png</file>
+        <file>Resource/home.png</file>
+        <file>Resource/minus.png</file>
+        <file>Resource/newFolder.png</file>
+        <file>Resource/play.png</file>
+        <file>Resource/refresh.png</file>
+        <file>Resource/settings.png</file>
+        <file>Resource/stop.png</file>
+        <file>Resource/times2.png</file>
+        <file>Resource/up.png</file>
+        <file>Resource/pause.png</file>
+        <file>Resource/send.png</file>
+        <file>Resource/send2.png</file>
+        <file>Resource/arrow.cur</file>
+        <file>Resource/copy.png</file>
+        <file>Resource/closeEye.png</file>
+        <file>Resource/openEye.png</file>
+        <file>Resource/circle.png</file>
+        <file>Resource/hotkey.png</file>
+        <file>Resource/one-to-one.png</file>
+        <file>Resource/scale.png</file>
+        <file>QSS/global.qss</file>
+        <file>Resource/down2.png</file>
+        <file>Resource/up2.png</file>
+        <file>Resource/logo_32.png</file>
+        <file>Resource/logo_48.png</file>
+        <file>Resource/file.png</file>
+        <file>Resource/folder.png</file>
+        <file>Resource/delete.png</file>
+        <file>Resource/rename.png</file>
+        <file>Resource/loop.png</file>
+        <file>Resource/folder-open.png</file>
+        <file>Resource/add.png</file>
+        <file>Resource/modify.png</file>
+    </qresource>
+</RCC>

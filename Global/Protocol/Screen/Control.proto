@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package Global.Protocol.Screen;
+
+message PublishCursorPosition
+{
+	int32 x = 1;
+	int32 y = 2;
+}
+
+message ControlKeyPress
+{
+	int32 key = 1;
+}
+
+message ControlKeyRelease
+{
+	int32 key = 1;
+}
+
+message ControlMouseButtonPress
+{
+	int32 x = 1;
+	int32 y = 2;
+	int32 button = 3;
+}
+
+message ControlMouseButtonRelease
+{
+	int32 x = 1;
+	int32 y = 2;
+	int32 button = 3;
+}
+
+message ControlMouseButtonDoubleClick
+{
+	int32 x = 1;
+	int32 y = 2;
+	int32 button = 3;
+}
+
+message ControlMouseMove
+{
+	int32 x = 1;
+	int32 y = 2;
+}
+
+message ControlMouseWheel
+{
+	int32 delta = 1;
+}
+
+message SetClipboardText
+{
+	string text = 1;
+}
+
+message EnableAutoPublishDesktop
+{
+	bool enable = 1;
+}
+
+message Shortcut
+{
+	int32 key = 1;
+}

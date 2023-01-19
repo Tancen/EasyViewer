@@ -1,5 +1,5 @@
 # What is EasyViewer?
-[中文文档]()<br/>
+[中文文档](https://github.com/Tancen/EasyViewer/blob/dev/README_zh.md)<br/>
 EasyViewer is an open source cross-platform remote control software developed based on Qt. It provides three core functions of remote desktop, file transfer and remote terminal. <br/>
 EasyViewer currently includes the following programs：<br/>
 - easyviewerd - Server program, under the project directory: ./Server
@@ -61,7 +61,7 @@ Note:<br/>
    3. Access partner with easyviewer-terminal-viewer<br/>
         Run easyviewer-terminal-viewer with parameters --host=server_IP_address_or_domain_name --port=server_user_service_port --public_key_file=key.public_file_path --account=your_account --password=your_password --partner_id=Partner_ID --auth_string=Partner_verification_code
 # License
-EasyViewer is under the MIT license. See the [LICENSE]() file for details.
+EasyViewer is under the MIT license. See the [LICENSE](https://github.com/Tancen/EasyViewer/blob/dev/LICENSE) file for details.
 # Other
 EasyViewer is currently in the exploration stage, it is not perfect now, but we will continue to improve it.<br/>
 Many commercial remote control software on the market are very mature, and you can also use them to get a better experience. Here we list some commercial software that most recognizes:<br/>

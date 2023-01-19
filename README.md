@@ -7,7 +7,6 @@ EasyViewer currently includes the following programs：<br/>
 - easyviewer-client-gui - Client program with gui，under the project directory: ./Client/Client-UI
 - easyviewer-client-without-gui - As a controlled client program without gui, it can only respond to file transfers and remote terminal requests， under the project directory: ./Client/Client-Console/Guard/Guard-Console
 - easyviewer-terminal-viewer - Remote terminal client，under the project directory： ./Client/Client-Console/Viewer/TerminalViewer
-<br/>
 # How is EasyViewer different?
 Most of the remote control software on the market is aimed at ordinary users. The difference between EasyViewer and them is that EasyViewer provides remote terminal functions for IT practitioners.
 # Supported platforms

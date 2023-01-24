@@ -62,7 +62,6 @@ Note:<br/>
 # License
 EasyViewer is under the MIT license. See the [LICENSE](https://github.com/Tancen/EasyViewer/blob/dev/LICENSE) file for details.
 # Other
-EasyViewer is currently in the exploration stage, it is not perfect now, but we will continue to improve it.<br/>
-Many commercial remote control software on the market are very mature, and you can also use them to get a better experience. Here we list some commercial software that most recognizes:<br/>
+EasyViewer is continuously improving, you can also use commercial software to get a better experience, here we list some commercial software that most recognizes:<br/>
 - teamviewer：https://www.teamviewer.com/
 - sunlogin：https://sunlogin.oray.com/

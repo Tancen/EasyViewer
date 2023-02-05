@@ -73,12 +73,27 @@ bool Application::init()
     if (argsParser.isSet(optDebug))
         Logger::setLevel(ILogger::Level::L_DEBUG);
 
-    std::string name = argsParser.value(optServerName).toStdString();
+    std::string serverName = argsParser.value(optServerName).toStdString();
     std::string host = argsParser.value(optServerHost).toStdString();
     unsigned port = argsParser.value(optServerPort).toUInt();
     if (!port)
         port = 9748;
+    std::string partnerAlias = argsParser.value(optPartnerAlias).toStdString();
     std::string publicKey = argsParser.value(optPublicKey).toStdString();
+    std::string account = argsParser.value(optAccount).toStdString();
+    std::string password = argsParser.value(optPassword).toStdString();
+    User::ID partnerUserId = argsParser.value(optPartnerId).toLongLong();
+    std::string authString = argsParser.value(optAuthString).toStdString();
+
+    // title
+    QString title = QString::asprintf("%s-%s", (serverName.empty() ? host.c_str() : serverName.c_str()),
+                                (partnerAlias.empty() ? std::to_string(partnerUserId).c_str() : partnerAlias.c_str()));
+#ifdef Q_OS_WIN
+    SetConsoleTitleA(title.toStdString().c_str());
+#else
+    printf("\033]0;%s\007", title.toStdString().c_str());
+#endif
+
     if (publicKey.empty())
     {
         QString path = argsParser.value(optPublicKeyFile);
@@ -99,12 +114,6 @@ bool Application::init()
             return false;
         }
     }
-    std::string account = argsParser.value(optAccount).toStdString();
-    std::string password = argsParser.value(optPassword).toStdString();
-    User::ID partnerUserId = argsParser.value(optPartnerId).toLongLong();
-    std::string partnerAlias = argsParser.value(optPartnerAlias).toStdString();
-    std::string authString = argsParser.value(optAuthString).toStdString();
-
     auto hostInfo = QHostInfo::fromName(host.c_str());
     if (hostInfo.error() != QHostInfo::NoError)
     {
@@ -118,14 +127,6 @@ bool Application::init()
         Logger::error("public key invalid");
         return false;
     }
-
-    // title
-    QString title = QString::asprintf("%s[%s]-%s[%lld]", name.c_str(), host.c_str(), partnerAlias.c_str(), partnerUserId);
-#ifdef Q_OS_WIN
-    SetConsoleTitleA(title.toStdString().c_str());
-#else
-    printf("\033]0;%s\007", title.toStdString().c_str());
-#endif
 
     if(!KeyboardHit::init())
     {

@@ -12,6 +12,7 @@ public:
     ~TerminalViewer();
 
     int role() override;
+    std::pair<bool, std::string> init() override;
 
 private:
     bool handleCompleteData(unsigned tag, const unsigned char* data, size_t len ) override;

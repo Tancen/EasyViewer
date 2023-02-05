@@ -21,9 +21,7 @@ TerminalViewer::TerminalViewer(
     :   ViewerBase(peerHost, peerIP, peerPort, publicKey, account, password, partnerUserId, authString),
         m_disableInput(true)
 {
-    KeyboardHit::share()->subscribe(this,
-                            std::bind(&TerminalViewer::writeCharactersToPartner, this, std::placeholders::_1, std::placeholders::_2),
-                            std::bind(&TerminalViewer::resizePartnerTerminal, this));
+
 }
 
 TerminalViewer::~TerminalViewer()
@@ -34,6 +32,18 @@ TerminalViewer::~TerminalViewer()
 int TerminalViewer::role()
 {
     return GLOBAL_CONNECTION_ROLE_TERMINAL_VISITOR;
+}
+
+std::pair<bool, std::string> TerminalViewer::init()
+{
+    auto ret = ViewerBase::init();
+    if (ret.first)
+        return ret;
+
+    KeyboardHit::share()->subscribe(this,
+                            std::bind(&TerminalViewer::writeCharactersToPartner, this, std::placeholders::_1, std::placeholders::_2),
+                            std::bind(&TerminalViewer::resizePartnerTerminal, this));
+    return ret;
 }
 
 void TerminalViewer::whenLoggedIn()

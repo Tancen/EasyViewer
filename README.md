@@ -61,7 +61,3 @@ Note:<br/>
         Run easyviewer-terminal-viewer with parameters --host=server_IP_address_or_domain_name --port=server_user_service_port --public_key_file=key.public_file_path --account=your_account --password=your_password --partner_id=Partner_ID --auth_string=Partner_verification_code
 # License
 EasyViewer is under the MIT license. See the [LICENSE](https://github.com/Tancen/EasyViewer/blob/dev/LICENSE) file for details.
-# Other
-EasyViewer is continuously improving, you can also use commercial software to get a better experience, here we list some commercial software that most recognizes:<br/>
-- teamviewer：https://www.teamviewer.com/
-- sunlogin：https://sunlogin.oray.com/

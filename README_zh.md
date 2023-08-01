@@ -60,7 +60,3 @@ easyviewerd-ctrl 在 Linux 上使用了 readline 的部分功能，请确保它�
         运行 easyviewer-terminal-viewer 并带上参数 --host=服务器IP地址或域名 --port=服务器用户服务端口 --public_key_file=key.public文件路径 --account=你的账号 --password=你的密码 --partner_id=伙伴ID --auth_string=伙伴验证码
 # 许可
 EasyViewer 基于 MIT 许可。[查看详情](https://github.com/Tancen/EasyViewer/blob/dev/LICENSE)
-# 其它
-EasyViewer 在持续改善中，你也可以使用商业软件获取更好的体验，我们在这里列出了一些大家都比较认可的商业软件：<br/>
-- teamviewer：https://www.teamviewer.com/
-- sunlogin：https://sunlogin.oray.com/
